@@ -25,34 +25,29 @@ The dataset structure should follow this format:
         └── ...
 ```
 
----
+## partB.py - Transfer Learning with ResNet50
 
-## partA.py - Custom CNN with WandB Sweeps
+### How to Use
 
-### 🔧 How to Use
+1. **Pretrained Backbone**:
 
-1. **Sweep Setup and Launch**:
+   - Loads `ResNet50` from torchvision with pretrained ImageNet weights.
+   - Freezes all layers except the final classifier head.
 
-   - Define sweep configurations including learning rate, batch size, activation, filter organization, etc.
-   - WandB sweep is initiated in `main()` using:
-     ```python
-     sweep_id = wandb.sweep(sweep_config, project="A2")
-     wandb.agent(sweep_id, train, count=15)
-     ```
+2. **Training**:
 
-2. **Train Function**
+   - Dataset is split 80:20 for train/val from `train/` folder.
+   - Logs training/validation loss & accuracy to WandB.
+   - Saves best model as `models/best_model_<run_name>.pth`.
 
-   - Trains CNN with optional batch norm and dropout.
-   - Saves `best_model.pth` and `best_config.json` locally and logs them on WandB.
+3. **Evaluation**:
 
-3. **Test Function**
-
-   - Loads best run from the sweep and evaluates on the test set.
-   - Saves a grid visualization of predictions as `test_predictions_grid.png`.
+   - Evaluates final model on the `val/` folder.
+   - Logs class-wise accuracy, confusion matrix, and plots.
 
 4. **Run Entire Pipeline**:
    ```bash
-   python partA.py
+   python partB.py
    ```
 
 ---
