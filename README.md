@@ -1,6 +1,6 @@
-## 📚 README
+## README
 
-### 📋 Project Overview
+### Project Overview
 
 This project presents two pipelines for image classification using the **iNaturalist 12K** dataset:
 
@@ -9,7 +9,7 @@ This project presents two pipelines for image classification using the **iNatura
 
 ---
 
-## 🗃️ Dataset
+## Dataset
 
 The dataset structure should follow this format:
 
@@ -27,7 +27,7 @@ The dataset structure should follow this format:
 
 ---
 
-## 🧐 partA.py - Custom CNN with WandB Sweeps
+## partA.py - Custom CNN with WandB Sweeps
 
 ### 🔧 How to Use
 
@@ -57,9 +57,9 @@ The dataset structure should follow this format:
 
 ---
 
-## 🧐 partB.py - Transfer Learning with ResNet50
+## partB.py - Transfer Learning with ResNet50
 
-### 🔧 How to Use
+### How to Use
 
 1. **Pretrained Backbone**:
 
@@ -84,7 +84,7 @@ The dataset structure should follow this format:
 
 ---
 
-## 📈 Outputs & Artifacts
+## Outputs & Artifacts
 
 - 📁 `models/`: Contains saved model weights.
 - 📁 `plots/`: Includes training curve plots and confusion matrices.
@@ -92,7 +92,7 @@ The dataset structure should follow this format:
 
 ---
 
-## 🧪 Requirements
+## Requirements
 
 - Python ≥ 3.7
 - PyTorch ≥ 1.10
@@ -111,7 +111,7 @@ pip install torch torchvision wandb scikit-learn matplotlib
 
 ---
 
-## 🏁 Quick Notes
+## Quick Notes
 
 - Set the correct dataset and model path inside the scripts (`/kaggle/input/nature-12k/inaturalist_12K`).
 - Ensure your WandB API key is set:
